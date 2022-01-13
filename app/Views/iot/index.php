@@ -11,8 +11,8 @@
 <body>
 	<!-- The sidebar -->
 	<div class="sidebar">
-		<a class="active" href="#home"><i class="fa fa-home"></i> Dashboard</a>
-		<a href="#news"><i class="fa fa-users"></i> Team</a>
+		<a class="active" href="/"><i class="fa fa-home"></i> Dashboard</a>
+		<a href="/team"><i class="fa fa-users"></i> Team</a>
 	</div>
 
 	<!-- Page content -->
@@ -59,31 +59,25 @@
 						<table>
 							<thead>
 								<tr>
-									<th class="th-sm">Name</th>
-									<th class="th-sm">Position</th>
-									<th class="th-sm">Office</th>
-									<th class="th-sm">Age</th>
-									<th class="th-sm">Start date</th>
-									<th class="th-sm">Salary</th>
+									<th><b>Time</b></th>
+									<th><b>Suhu</b></th>
+									<th><b>Kelembapan</b></th>
+									<th><b>Tekanan udara</b></th>
+									<th><b>CO<sup>2</sup></b></th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td>Tiger Nixon</td>
-									<td>System Architect</td>
-									<td>Edinburgh</td>
-									<td>61</td>
-									<td>2011/04/25</td>
-									<td>$320,800</td>
-								</tr>
-								<tr>
-									<td>Garrett Winters</td>
-									<td>Accountant</td>
-									<td>Tokyo</td>
-									<td>63</td>
-									<td>2011/07/25</td>
-									<td>$170,750</td>
-								</tr>
+								<?php for($i = 0; $i < 50 ; $i++) {
+									?>	
+									<tr>
+										<td>Tiger Nixon</td>
+										<td>System Architect</td>
+										<td>Edinburgh</td>
+										<td>61</td>
+										<td>2011/04/25</td>
+										<td>$320,800</td>
+									</tr>
+								<?php } ;?>
 							</tbody>
 						</table>
 					</div>
@@ -92,5 +86,6 @@
 		</div>
 
 		<script src="<?= base_url('mdb/js/mdb.min.js') ;?>"></script>
+		
 	</body>
 	</html>

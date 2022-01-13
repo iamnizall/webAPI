@@ -8,4 +8,9 @@ class IoT extends BaseController
     {
         return view('iot/index');
     }
+
+    public function team()
+    {
+        return view('iot/team');
+    }
 }
