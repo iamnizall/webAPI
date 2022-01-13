@@ -2,11 +2,17 @@
 
 namespace App\Controllers;
 
+use App\Models\SensorModel;
+
 class Home extends BaseController
 {
+
     public function index()
     {
-        return view('iot/index');
+        $sensor = new SensorModel();
+        $data = $sensor->getSensor();
+
+        return view('iot/index',compact('data'));
     }
 
     public function team()

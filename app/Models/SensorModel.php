@@ -18,4 +18,9 @@ class SensorModel extends Model
         'tekanan',
         'co2'
     ];
+
+    public function getSensor()
+    {
+        return $this->orderBy('id', 'DESC')->findAll();
+    }
 }

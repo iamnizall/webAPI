@@ -67,15 +67,14 @@
 								</tr>
 							</thead>
 							<tbody>
-								<?php for($i = 0; $i < 50 ; $i++) {
+								<?php foreach ($data as $val) {
 									?>	
 									<tr>
-										<td>Tiger Nixon</td>
-										<td>System Architect</td>
-										<td>Edinburgh</td>
-										<td>61</td>
-										<td>2011/04/25</td>
-										<td>$320,800</td>
+										<td><?=  $val['time'] ;?></td>
+										<td><?=  $val['suhu'];?></td>
+										<td><?=  $val['kelembapan'] ;?></td>
+										<td><?=  $val['tekanan'] ;?></td>
+										<td><?=  $val['co2'] ;?></td>
 									</tr>
 								<?php } ;?>
 							</tbody>
