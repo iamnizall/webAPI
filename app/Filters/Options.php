@@ -1,24 +1,24 @@
 <?php namespace App\Filters;
 
-    use CodeIgniter\HTTP\RequestInterface;
-    use CodeIgniter\HTTP\ResponseInterface;
-    use CodeIgniter\Filters\FilterInterface;
+use CodeIgniter\HTTP\RequestInterface;
+use CodeIgniter\HTTP\ResponseInterface;
+use CodeIgniter\Filters\FilterInterface;
 
-    Class Options implements FilterInterface
+Class Options implements FilterInterface
+{
+    public function before(RequestInterface $request)
     {
-        public function before(RequestInterface $request)
-        {
-            header('Access-Control-Allow-Origin: *');
-            header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, Authorization");
-            header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
-            $method = $_SERVER['REQUEST_METHOD'];
-            if ($method == "OPTIONS") {
-                die();
-            }
+        header('Access-Control-Allow-Origin: *');
+        header("Access-Control-Allow-Headers: X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method, Authorization");
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+        $method = $_SERVER['REQUEST_METHOD'];
+        if ($method == "OPTIONS") {
+        die();
         }
+    }
 
-        public function after(RequestInterface $request, ResponseInterface $response)
-        {
-          // Do something here
-      }
-  }
+    public function after(RequestInterface $request, ResponseInterface $response)
+    {
+      // Do something here
+    }
+}

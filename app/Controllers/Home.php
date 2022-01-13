@@ -6,6 +6,11 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('welcome_message');
+        return view('iot/index');
+    }
+
+    public function team()
+    {
+        return view('iot/team');
     }
 }

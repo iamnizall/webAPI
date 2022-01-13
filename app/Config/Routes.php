@@ -31,10 +31,9 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'IoT::index');
-$routes->get('/team', 'IoT::team');
+$routes->get('/', 'Home::index');
+$routes->get('/team', 'Home::team');
 
-$routes->resource('api/post', ['controller' =>'Post']);
 $routes->resource('api/sensor', ['controller' =>'Sensor']);
 
 /*

@@ -23,7 +23,6 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
-        'options'       => \App\Filters\Options::class, 
     ];
 
     /**
@@ -34,7 +33,6 @@ class Filters extends BaseConfig
      */
     public $globals = [
         'before' => [
-            'options',
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
