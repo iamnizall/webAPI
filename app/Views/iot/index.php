@@ -27,64 +27,95 @@
 				<div class="col-md-3 mb-2">
 					<div class="card">
 						<div class="card-body">
-							sensor suhu
+							<div class="d-flex justify-content-between px-md-1">
+								<div>
+									<h3 class="text-success">64.89 %</h3>
+									<p class="mb-0">Sensor Suhu</p>
+								</div>
+								<div class="align-self-center">
+									<i class="fas fa-mug-hot text-success fa-3x"></i>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3 mb-2">
 					<div class="card">
 						<div class="card-body">
-							sensor kelembapan udara
+							<div class="d-flex justify-content-between px-md-1">
+								<div>
+									<h3 class="text-danger">278</h3>
+									<p class="mb-0">Kelembapan Udara</p>
+								</div>
+								<div class="align-self-center">
+									<i class="fas fa-rocket text-danger fa-3x"></i>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3 mb-2">
 					<div class="card">
 						<div class="card-body">
-							sensor teekanan udara
+							<div class="d-flex justify-content-between px-md-1">
+								<div>
+									<h3 class="text-info">423</h3>
+									<p class="mb-0">Tekanan Udara</p>
+								</div>
+								<div class="align-self-center">
+									<i class="far fa-life-ring text-info fa-3x"></i>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3 mb-2">
 					<div class="card">
 						<div class="card-body">
-							sensor CO2
+							<div class="d-flex justify-content-between px-md-1">
+								<div>
+									<h3 class="text-warning">64.89 %</h3>
+									<p class="mb-0">kadar CO<sup>2</sup></p>
+								</div>
+								<div class="align-self-center">
+									<i class="fas fa-chart-pie text-warning fa-3x"></i>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="card">
-				<div class="card-body">
-					<div  class="datatable">
-						<table>
-							<thead>
-								<tr>
-									<th><b>Time</b></th>
-									<th><b>Suhu</b></th>
-									<th><b>Kelembapan</b></th>
-									<th><b>Tekanan udara</b></th>
-									<th><b>CO<sup>2</sup></b></th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php foreach ($data as $val) {
-									?>	
+				<div class="card">
+					<div class="card-body">
+						<div  class="datatable">
+							<table>
+								<thead>
 									<tr>
-										<td><?=  $val['time'] ;?></td>
-										<td><?=  $val['suhu'];?></td>
-										<td><?=  $val['kelembapan'] ;?></td>
-										<td><?=  $val['tekanan'] ;?></td>
-										<td><?=  $val['co2'] ;?></td>
+										<th><b>Time</b></th>
+										<th><b>Suhu</b></th>
+										<th><b>Kelembapan</b></th>
+										<th><b>Tekanan udara</b></th>
+										<th><b>CO<sup>2</sup></b></th>
 									</tr>
-								<?php } ;?>
-							</tbody>
-						</table>
+								</thead>
+								<tbody>
+									<?php foreach ($data as $val) {
+										?>	
+										<tr>
+											<td><?=  $val['time'] ;?></td>
+											<td><?=  $val['suhu'];?></td>
+											<td><?=  $val['kelembapan'] ;?></td>
+											<td><?=  $val['tekanan'] ;?></td>
+											<td><?=  $val['co2'] ;?></td>
+										</tr>
+									<?php } ;?>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
 
-		<script src="<?= base_url('mdb/js/mdb.min.js') ;?>"></script>
-		
-	</body>
-	</html>
+			<script src="<?= base_url('mdb/js/mdb.min.js') ;?>"></script>
+
+		</body>
+		</html>
