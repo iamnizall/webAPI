@@ -29,11 +29,11 @@
 						<div class="card-body">
 							<div class="d-flex justify-content-between px-md-1">
 								<div>
-									<h3 class="text-success">64.89 %</h3>
-									<p class="mb-0">Sensor Suhu</p>
+									<h3 class="text-danger"><?= $row['suhu'] ;?><sup>&deg;C</sup></h3>
+									<p class="mb-0">Temperatur</p>
 								</div>
 								<div class="align-self-center">
-									<i class="fas fa-mug-hot text-success fa-3x"></i>
+									<i class="fas fa-temperature-low text-danger fa-3x"></i>
 								</div>
 							</div>
 						</div>
@@ -44,11 +44,11 @@
 						<div class="card-body">
 							<div class="d-flex justify-content-between px-md-1">
 								<div>
-									<h3 class="text-danger">278</h3>
+									<h3 class="text-info"><?= $row['kelembapan'] ;?><sup>%</sup></h3>
 									<p class="mb-0">Kelembapan Udara</p>
 								</div>
 								<div class="align-self-center">
-									<i class="fas fa-rocket text-danger fa-3x"></i>
+									<i class="fas fa-dewpoint text-info fa-3x"></i>
 								</div>
 							</div>
 						</div>
@@ -59,11 +59,11 @@
 						<div class="card-body">
 							<div class="d-flex justify-content-between px-md-1">
 								<div>
-									<h3 class="text-info">423</h3>
+									<h3 class="text-primary"><?= $row['tekanan'] ;?><sup>hPa</sup></h3>
 									<p class="mb-0">Tekanan Udara</p>
 								</div>
 								<div class="align-self-center">
-									<i class="far fa-life-ring text-info fa-3x"></i>
+									<i class="fas fa-fan text-primary fa-3x"></i>
 								</div>
 							</div>
 						</div>
@@ -74,17 +74,17 @@
 						<div class="card-body">
 							<div class="d-flex justify-content-between px-md-1">
 								<div>
-									<h3 class="text-warning">64.89 %</h3>
+									<h3 class="text-warning"><?= $row['co2'] ;?><sup>Ppm</sup></h3>
 									<p class="mb-0">kadar CO<sup>2</sup></p>
 								</div>
 								<div class="align-self-center">
-									<i class="fas fa-chart-pie text-warning fa-3x"></i>
+									<i class="fas fa-smoking text-warning fa-3x"></i>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="card">
+				<div class="card mb-2">
 					<div class="card-body">
 						<div  class="datatable">
 							<table>
