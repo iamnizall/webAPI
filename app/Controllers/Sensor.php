@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use CodeIgniter\RESTful\ResourceController;
 
+use App\Models\SensorModel;
+
 class Sensor extends ResourceController
 {
     protected $modelName = 'App\Models\SensorModel';
@@ -80,42 +82,41 @@ class Sensor extends ResourceController
      */
     public function update($id = null)
     {
-        //model
-        $post = $this->model;
-
-        if ($this->request)
-        {
-            //get request from Vue Js
-            if($this->request->getJSON()) {
-
-                $json = $this->request->getJSON();
-                
-                $post->update($json->id, [
-                    'suhu'     => $json->suhu,
-                    'kelembapan'   => $json->kelembapan,
-                    'tekanan'   => $json->tekanan,
-                    'co2'   => $json->co2
-                ]);
-
-            } else {
-
-                //get request from PostMan and more
-                $data = $this->request->getRawInput();
-                $post->update($id, $data);
-
-            }
-
-            return $this->respond([
-                'statusCode' => 200,
-                'message'    => 'Data Berhasil Diupdate!',
-            ], 200);
+        $model = new SensorModel;
+        $json = $this->request->getJSON();
+        if($json){
+            $data = [
+                'suhu' => $json->suhu,
+                'kelembapan' => $json->kelembapan,
+                'tekanan' => $json->tekanan,
+                'co2' => $json->co2
+            ];
+        }else{
+            $input = $this->request->getRawInput();
+            $data = [
+                'suhu' => $input['suhu'],
+                'kelembapan' => $input['kelembapan'],
+                'tekanan' => $input['tekanan'],
+                'co2' => $input['co2']
+            ];
         }
+        // Insert to Database
+        $model->update($id, $data);
+        $response = [
+            'status'   => 200,
+            'error'    => null,
+            'messages' => [
+                'success' => 'Data Updated'
+            ]
+        ];
+        return $this->respond($response);
     }
 
     /**
      * edit function
      * @method : DELETE with params ID
      */
+
     public function delete($id = null)
     {
         $post = $this->model->find($id);
